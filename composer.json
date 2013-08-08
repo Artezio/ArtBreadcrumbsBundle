@@ -1,7 +1,7 @@
 {
     "name": "art/breadcrumbs-bundle",
     "type": "symfony-bundle",
-    "description": "Symfony ArtBreadcrumbs",
+    "description": "Breadcrumbs bundle for Symfony2",
     "keywords": ["Breadcrumbs"],
     "homepage": "https://github.com/Paca-Vaca/art_breadcrumbs",
     "license": "MIT",
