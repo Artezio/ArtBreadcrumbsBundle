@@ -7,6 +7,7 @@ Getting Started With ArtBreadcrumbs
 2. Enable the bundle
 3. Configure the bundle in your config file
 4. Write your schema for breadcrumbs tree
+5. Call twig function in your template
 
 ### Step 1: Dowload ArtBreadcrumbs using composer
 Add ArtBreadcrumbs in your composer.json:
@@ -130,3 +131,23 @@ children:
 ```
 
 The names of nodes doesn't matter.
+
+### Step 5: Call twig function in your template
+
+To show your breadcrumbs on page simply add next in the template of you page:
+
+``` html+jinja
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+    </head>
+    <body>
+    <!-- your code ... -->
+
+    {{ build_breadcrumbs()|raw }}
+
+    <!-- your code ... -->
+    </body>
+</html>
+```

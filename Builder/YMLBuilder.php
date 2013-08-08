@@ -5,17 +5,30 @@
  */
 namespace Art\BreadcrumbsBundle\Builder;
 
-use Symfony\Bundle\FrameworkBundle\Routing\Router;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Yaml\Yaml;
 
 class YMLBuilder implements BuilderInterface
 {
-    private $path;
+    /**
+     * @var Symfony\Component\Routing\RouterInterface
+     */
     private $router;
+
+    /**
+     * @var Symfony\Component\HttpFoundation\Request
+     */
     private $request;
+
+    /**
+     * @var
+     */
     private $routeCollection;
+
+    /**
+     * @var string
+     */
     private $schema;
 
     public function __construct(RouterInterface $router, $schema)

@@ -5,11 +5,8 @@
  */
 namespace Art\BreadcrumbsBundle\Builder;
 
-use Art\BreadcrumbsBundle\Factory\BuilderFactory;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\Routing\Router;
-use Symfony\Component\Yaml\Yaml;
 
 class MainBuilder
 {
@@ -17,8 +14,20 @@ class MainBuilder
      * @var \Twig_Environment
      */
     private $environment;
+
+    /**
+     * @var string
+     */
     private $separator;
+
+    /**
+     * @var string
+     */
     private $template;
+
+    /**
+     * @var BuilderInterface
+     */
     private $builder;
 
     /**
