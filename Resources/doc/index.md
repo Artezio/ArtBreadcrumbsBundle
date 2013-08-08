@@ -6,6 +6,7 @@ Getting Started With ArtBreadcrumbs
 1. Download ArtBreadcrumbs using composer
 2. Enable the bundle
 3. Configure the bundle in your config file
+4. Write your schema for breadcrumbs tree
 
 ### Step 1: Dowload ArtBreadcrumbs using composer
 Add ArtBreadcrumbs in your composer.json:
@@ -73,3 +74,59 @@ Or if you prefer XML:
 ```
 
 There is no required values and you can simply ignore this
+
+### Step 4: Write your schema for breadcrumbs tree
+
+By default the bundle is looking for breadcrumbs.yml file in your app/config directory. But you can specify different
+location of your schema file using the schema parameter in config.yml:
+
+``` yaml
+# app/config/config.yml
+art_breadcrumbs:
+    schema: "%kernel.root_dir%/../src/<Vendor>/<BundleName>/config/breadcrumbs.yml"
+```
+
+The schema should be looking like this:
+
+``` yaml
+# breadcrumbs.yml
+label: "breadcrumbs.home"
+route: "front"
+children:
+    User list:
+        label: "breadcrumbs.admin_user_list"
+        route: "admin_user_list"
+        children:
+            Edit user:
+                label: "breadcrumbs.admin_user_edit"
+                route: "admin_user_edit"
+            Create user:
+                label: "breadcrumbs.admin_user_create"
+                route: "admin_user_create"
+    Organization list:
+        label: "breadcrumbs.admin_organization_list"
+        route: "admin_organization_list"
+        children:
+            Edit organization:
+                label: "breadcrumbs.admin_organization_edit"
+                route: "admin_organization_edit"
+            Create organization:
+                label: "breadcrumbs.admin_organization_create"
+                route: "admin_organization_create"
+    Organization list:
+            label: "breadcrumbs.admin_organization_list"
+            route: "admin_organization_list"
+            children:
+                Organization address list:
+                    label: "breadcrumbs.admin_organization_address_list"
+                    route: "admin_organization_address_list"
+                    children:
+                        Create organization address:
+                            label: "breadcrumbs.admin_organization_address_create"
+                            route: "admin_organization_address_create"
+                        Edit organization address:
+                            label: "breadcrumbs.admin_organization_address_edit"
+                            route: "admin_organization_address_edit"
+```
+
+The names of nodes doesn't matter.
