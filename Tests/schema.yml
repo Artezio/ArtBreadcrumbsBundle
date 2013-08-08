@@ -1,0 +1,10 @@
+label: home
+route: home
+children:
+  Children1:
+      label: children_1
+      route: children_1
+      children:
+          Children1_1:
+              label: children_children_1
+              route: children_children_1

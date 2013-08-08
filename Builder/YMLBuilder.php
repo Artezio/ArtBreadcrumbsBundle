@@ -5,6 +5,7 @@
  */
 namespace Art\BreadcrumbsBundle\Builder;
 
+use Art\BreadcrumbsBundle\Exception\InvalidSchemaException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\RouterInterface;
 use Symfony\Component\Yaml\Yaml;
@@ -40,14 +41,13 @@ class YMLBuilder implements BuilderInterface
     public function build()
     {
         $path = realpath($this->schema);
-        $this->routeCollection = $this->router->getRouteCollection();
         if (!is_string($path) || 'yml' !== pathinfo($path, PATHINFO_EXTENSION)) {
-            throw new \Exception("The schema file provided isn't correct");
+            throw new InvalidSchemaException("The schema file provided isn't correct");
         }
         $structure = Yaml::parse($path);
 
         if (!$this->request) {
-            throw new \Exception('This function should be user only in request scope');
+            throw new \Exception(sprintf('This builder(%s) should be used only in request scope', get_class($this)));
         }
         
         $this->routeCollection = $this->router->getRouteCollection();
