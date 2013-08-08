@@ -31,6 +31,11 @@ class MainBuilder
     private $builder;
 
     /**
+     * @var boolean
+     */
+    private $mode;
+
+    /**
      * Default constructor.
      *
      * @param \Twig_Environment               $environment             Twig environment object
@@ -46,6 +51,11 @@ class MainBuilder
         $this->builder = $builder;
     }
 
+    public function setDevMode($mode = false)
+    {
+        $this->mode = $mode;
+    }
+
     /**
      * build method
      * @return mixed
@@ -55,6 +65,13 @@ class MainBuilder
         $breadcrumbs = $this->builder->build();
         $template = $this->environment->loadTemplate($this->template);
 
-        return $template->renderBlock('breadcrumbs', array('items' => $breadcrumbs, 'separator' => $this->separator));
+        return $template->renderBlock(
+            'breadcrumbs',
+            array(
+                'mode' => $this->mode,
+                'items' => $breadcrumbs,
+                'separator' => $this->separator
+            )
+        );
     }
 }

@@ -16,6 +16,10 @@
                         </li>
                     {% endfor %}
                 </ul>
+            {% elseif mode == true %}
+                <ul class="breadcrumbs">
+                    <li>{{ 'There is no breadcrumbs for this page'|trans() }}</li>
+                </ul>
             {% endif %}
             {% endspaceless %}
     {% endautoescape %}

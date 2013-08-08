@@ -29,6 +29,7 @@ class ArtBreadcrumbsExtension extends Extension
         $container->setAlias('art_breadcrumbs.builder', $config['builder_service']);
         $container->setParameter('art_breadcrumbs.separator', $config['separator']);
         $container->setParameter('art_breadcrumbs.schema', $config['schema']);
+        $container->setParameter('art_breadcrumbs.dev_mode', $config['dev_mode']);
     }
 
     public function getAlias()

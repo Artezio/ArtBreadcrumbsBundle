@@ -7,6 +7,7 @@
     	<parameter key="art_breadcrmbs.template_helper.class">Art\BreadcrumbsBundle\Twig\BreadcrumbsExtension</parameter>
     	<parameter key="art_breadcrumbs.main_builder.class">Art\BreadcrumbsBundle\Builder\MainBuilder</parameter>
         <parameter key="art_breadcrumbs.yml_builder.class">Art\BreadcrumbsBundle\Builder\YMLBuilder</parameter>
+        <parameter key="art_breadcrumbs.dev_mode" />
     	<parameter key="art_breadcrumbs.schema" />
     </parameters>
     <services>
@@ -28,15 +29,9 @@
             <argument type="service" id="art_breadcrumbs.builder" />
             <argument>%art_breadcrumbs.template%</argument>
             <argument>%art_breadcrumbs.separator%</argument>
-            <!--<argument>%art_breadcrumbs.scheme_path%</argument>-->
+            <call method="setDevMode">
+                <argument>%art_breadcrumbs.dev_mode%</argument>
+            </call>
     	</service>
-        <!--<service id="art_breadcrumbs.real_builder" class="%art_breadcrumbs.real_builder.class%">
-            <call method="setRequest">
-                <argument type="service" id="request" on-invalid="null" strict="false" />
-            </call>
-            <call method="setTemplate">
-                <argument><argument>%art_breadcrumbs.template%</argument></argument>
-            </call>
-        </service>-->
     </services>
 </container>
