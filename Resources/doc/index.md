@@ -87,7 +87,7 @@ art_breadcrumbs:
     schema: "%kernel.root_dir%/../src/<Vendor>/<BundleName>/config/breadcrumbs.yml"
 ```
 
-The schema should be looking like this:
+The schema should looks like this:
 
 ``` yaml
 # breadcrumbs.yml
