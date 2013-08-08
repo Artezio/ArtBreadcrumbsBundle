@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <parameters>
+    	<parameter key="art_breadcrmbs.template_helper.class">Art\BreadcrumbsBundle\Twig\BreadcrumbsExtension</parameter>
+    	<parameter key="art_breadcrumbs.main_builder.class">Art\BreadcrumbsBundle\Builder\MainBuilder</parameter>
+        <parameter key="art_breadcrumbs.yml_builder.class">Art\BreadcrumbsBundle\Builder\YMLBuilder</parameter>
+    	<parameter key="art_breadcrumbs.schema" />
+    </parameters>
+    <services>
+        <!--Services for building breadcrumbs array-->
+        <service id="art_breadcrumbs.yml_builder" class="%art_breadcrumbs.yml_builder.class%">
+            <argument type="service" id="router" />
+            <argument>%art_breadcrumbs.schema%</argument>
+            <call method="setRequest">
+                <argument type="service" id="request" on-invalid="null" strict="false" />
+            </call>
+        </service>
+
+    	<service id="art_breadcrumbs.template_helper" class="%art_breadcrmbs.template_helper.class%">
+    		<argument type="service" id="art_breadcrumbs.main_builder" />
+            <tag name="twig.extension" alias="art_breadcrumbs.twig_extension" />
+    	</service>
+    	<service id="art_breadcrumbs.main_builder" class="%art_breadcrumbs.main_builder.class%">
+    		<argument type="service" id="twig" />
+            <argument type="service" id="art_breadcrumbs.builder" />
+            <argument>%art_breadcrumbs.template%</argument>
+            <argument>%art_breadcrumbs.separator%</argument>
+            <!--<argument>%art_breadcrumbs.scheme_path%</argument>-->
+    	</service>
+        <!--<service id="art_breadcrumbs.real_builder" class="%art_breadcrumbs.real_builder.class%">
+            <call method="setRequest">
+                <argument type="service" id="request" on-invalid="null" strict="false" />
+            </call>
+            <call method="setTemplate">
+                <argument><argument>%art_breadcrumbs.template%</argument></argument>
+            </call>
+        </service>-->
+    </services>
+</container>

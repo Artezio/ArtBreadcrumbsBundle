@@ -1,0 +1,32 @@
+{
+    "name": "art/breadcrumbs-bundle",
+    "type": "symfony-bundle",
+    "description": "Symfony ArtBreadcrumbs",
+    "keywords": ["Breadcrumbs"],
+    "homepage": "https://github.com/Paca-Vaca/art_breadcrumbs",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Paul Seleznev",
+            "email": "argeon87@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.2",
+        "symfony/framework-bundle": "2.3.*"
+    },
+    "require-dev": {
+        "symfony/framework-bundle": "2.3.*"
+    },
+    "autoload": {
+        "psr-0": { "Art\\BreadcrumbsBundle": "" }
+    },
+    "target-dir": "Art/BreadcrumbsBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.1.x-dev"
+        }
+    }
+}

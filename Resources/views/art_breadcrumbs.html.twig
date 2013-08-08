@@ -1,0 +1,22 @@
+{% block breadcrumbs %}
+    {% autoescape false %}
+        {% spaceless %}
+            {% if items|length %}
+                <ul class="breadcrumb">
+                    {% for item in items %}
+                        <li>
+                            {% if item['url'] is defined %}
+                                <a class="breadcrumb-element" href="{{ item['url'] }}">{{ item['label']|trans() }}</a>
+                            {% else %}
+                                <span class="breadcrumb-element active">{{ item['label']|trans() }}</span>
+                            {% endif %}
+                            {% if not loop.last %}
+                                <span class="divider">{{ separator }}</span>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+            {% endspaceless %}
+    {% endautoescape %}
+{% endblock %}
