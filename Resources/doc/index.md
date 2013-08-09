@@ -58,6 +58,7 @@ art_breadcrumbs:
     schema: "%kernel.root_dir%/config/breadcrumbs.yml"
     builder_service: art_breadcrumbs.yml_builder
     separator: "/"
+    dev_mode: false
 ```
 
 Or if you prefer XML:
@@ -67,12 +68,15 @@ Or if you prefer XML:
 
 <!-- other valid 'db-driver' values are 'mongodb' and 'couchdb' -->
 <art_breadcrumbs:config
-    tempate="ArtBreadcrumbsBundle::art_breadcrumbs.html.twig"
+    tempate = "ArtBreadcrumbsBundle::art_breadcrumbs.html.twig"
     schema = "%kernel.root_dir%/config/breadcrumbs.yml"
     builder_service = art_breadcrumbs.yml_builder
     separator = "/"
+    dev_mode = "false"
 />
 ```
+If dev_mode argument is set then whenever you call twig function and it doesnt' find suitable breadcrumbs structure - it will
+show a message about that. This works only in dev environment.
 
 There is no required values and you can simply ignore this
 
