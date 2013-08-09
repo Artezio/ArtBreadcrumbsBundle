@@ -1,6 +1,6 @@
 ArtBreadcrumbs
 ===============
-This bundle allows you to create breadcrumbs by specifiying breadcrumbs tree in a yml file
+This bundle allows you to create breadcrumbs by specifying breadcrumbs tree in a yml file
 
 Documentation
 -------------

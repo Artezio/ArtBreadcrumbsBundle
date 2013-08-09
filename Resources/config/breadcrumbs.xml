@@ -4,7 +4,7 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     <parameters>
-    	<parameter key="art_breadcrmbs.template_helper.class">Art\BreadcrumbsBundle\Twig\BreadcrumbsExtension</parameter>
+    	<parameter key="art_breadcrumbs.template_helper.class">Art\BreadcrumbsBundle\Twig\BreadcrumbsExtension</parameter>
     	<parameter key="art_breadcrumbs.main_builder.class">Art\BreadcrumbsBundle\Builder\MainBuilder</parameter>
         <parameter key="art_breadcrumbs.yml_builder.class">Art\BreadcrumbsBundle\Builder\YMLBuilder</parameter>
         <parameter key="art_breadcrumbs.dev_mode" />
@@ -20,7 +20,7 @@
             </call>
         </service>
 
-    	<service id="art_breadcrumbs.template_helper" class="%art_breadcrmbs.template_helper.class%">
+    	<service id="art_breadcrumbs.template_helper" class="%art_breadcrumbs.template_helper.class%">
     		<argument type="service" id="art_breadcrumbs.main_builder" />
             <tag name="twig.extension" alias="art_breadcrumbs.twig_extension" />
     	</service>
