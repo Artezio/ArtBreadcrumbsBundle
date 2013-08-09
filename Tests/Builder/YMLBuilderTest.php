@@ -58,9 +58,9 @@ class YMLBuilderTest extends \PHPUnit_Framework_TestCase
         $request->expects($this->any())
             ->method('get')
             ->will($this->returnValue('children_children_1'));
-        $ymlBulder = new YMLBuilder($router, 'Tests/schema.yml');
-        $ymlBulder->setRequest($request);
-        $breadcrumbs = $ymlBulder->build();
+        $ymlBuilder = new YMLBuilder($router, 'Tests/schema.yml');
+        $ymlBuilder->setRequest($request);
+        $breadcrumbs = $ymlBuilder->build();
 
         $this->assertCount(3, $breadcrumbs);
         $this->assertEquals('home', $breadcrumbs[0]['label']);

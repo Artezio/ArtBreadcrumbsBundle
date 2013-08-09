@@ -1,7 +1,7 @@
 Getting Started With ArtBreadcrumbs
 ==================================
 
-## Instalation
+## Installation
 
 1. Download ArtBreadcrumbs using composer
 2. Enable the bundle
@@ -9,7 +9,7 @@ Getting Started With ArtBreadcrumbs
 4. Write your schema for breadcrumbs tree
 5. Call twig function in your template
 
-### Step 1: Dowload ArtBreadcrumbs using composer
+### Step 1: Download ArtBreadcrumbs using composer
 Add ArtBreadcrumbs in your composer.json:
 
 ```js
@@ -54,7 +54,7 @@ Add the following in your config.yml file
 ``` yaml
 # app/config/config.yml
 art_breadcrumbs:
-    tempate: "ArtBreadcrumbsBundle::art_breadcrumbs.html.twig"
+    template: "ArtBreadcrumbsBundle::art_breadcrumbs.html.twig"
     schema: "%kernel.root_dir%/config/breadcrumbs.yml"
     builder_service: art_breadcrumbs.yml_builder
     separator: "/"
@@ -67,7 +67,7 @@ Or if you prefer XML:
 
 <!-- other valid 'db-driver' values are 'mongodb' and 'couchdb' -->
 <art_breadcrumbs:config
-    tempate="ArtBreadcrumbsBundle::art_breadcrumbs.html.twig"
+    template="ArtBreadcrumbsBundle::art_breadcrumbs.html.twig"
     schema = "%kernel.root_dir%/config/breadcrumbs.yml"
     builder_service = art_breadcrumbs.yml_builder
     separator = "/"
