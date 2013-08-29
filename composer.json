@@ -3,7 +3,7 @@
     "type": "symfony-bundle",
     "description": "Breadcrumbs bundle for Symfony2",
     "keywords": ["Breadcrumbs"],
-    "homepage": "https://github.com/Paca-Vaca/art_breadcrumbs",
+    "homepage": "https://github.com/Artezio/ArtBreadcrumbsBundle",
     "license": "MIT",
     "authors": [
         {
