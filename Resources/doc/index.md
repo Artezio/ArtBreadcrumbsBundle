@@ -155,3 +155,12 @@ To show your breadcrumbs on page simply add next in the template of you page:
     </body>
 </html>
 ```
+
+###Important note
+If you want your router work properly with url arguments - you should call them differently.
+For instance if you have three urls:
+* /organization
+* /organization/1
+* /organization/1/address/2
+
+You'd better to call the placeholders in these urls {organization_id} in place of the first ID and {address_id} in the second
