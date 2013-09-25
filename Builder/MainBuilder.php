@@ -63,15 +63,16 @@ class MainBuilder
     public function build()
     {
         $breadcrumbs = $this->builder->build();
+        $this->environment->getExtension('escaper')->setDefaultStrategy(false);
         $template = $this->environment->loadTemplate($this->template);
 
-        return $template->renderBlock(
-            'breadcrumbs',
+        return $template->display(
             array(
                 'mode' => $this->mode,
                 'items' => $breadcrumbs,
                 'separator' => $this->separator
-            )
+            ),
+            array('breadcrumbs')
         );
     }
 }
