@@ -149,7 +149,7 @@ To show your breadcrumbs on page simply add next in the template of you page:
     <body>
     <!-- your code ... -->
 
-    {{ build_breadcrumbs()|raw }}
+    {{ build_breadcrumbs() }}
 
     <!-- your code ... -->
     </body>
