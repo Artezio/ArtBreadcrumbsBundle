@@ -20,13 +20,13 @@ class BreadcrumbsExtension extends \Twig_Extension
     public function getFunctions()
     {
         return array(
-            'build_breadcrumbs' => new \Twig_Function_Method($this, 'buildBreadcrumbs')
+            'build_breadcrumbs' => new \Twig_Function_Method($this, 'buildBreadcrumbs', array('needs_context' => true))
         );
     }
 
-    public function buildBreadcrumbs()
+    public function buildBreadcrumbs(array $context)
     {
-        return $this->builder->build();
+        return $this->builder->build($context);
     }
 
     public function getName()

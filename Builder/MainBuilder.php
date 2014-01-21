@@ -57,10 +57,12 @@ class MainBuilder
     }
 
     /**
-     * build method
+     * Builds breadcrumbs output
+     *
+     * @param array $context Context twig variables array
      * @return mixed
      */
-    public function build()
+    public function build(array $context)
     {
         $breadcrumbs = $this->builder->build();
         $this->environment->getExtension('escaper')->setDefaultStrategy(false);
@@ -71,7 +73,7 @@ class MainBuilder
                 'mode' => $this->mode,
                 'items' => $breadcrumbs,
                 'separator' => $this->separator
-            ),
+            ) + $context,
             array('breadcrumbs')
         );
     }
