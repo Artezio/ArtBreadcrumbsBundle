@@ -63,7 +63,7 @@ class MainBuilder
     public function build()
     {
         $breadcrumbs = $this->builder->build();
-        $this->environment->getExtension('escaper')->setDefaultStrategy(false);
+//        $this->environment->getExtension('escaper')->setDefaultStrategy(false);
         $template = $this->environment->loadTemplate($this->template);
 
         return $template->display(
