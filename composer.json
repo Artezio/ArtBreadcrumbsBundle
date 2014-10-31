@@ -10,7 +10,11 @@
             "name": "Paul Seleznev",
             "email": "argeon87@gmail.com",
             "role": "Developer"
-        }
+        },
+        {
+-            "name": "Vladimir Droznik",
+-            "email": "vladimir.droznik@gmail.com"
+         }
     ],
     "minimum-stability": "dev",
     "require": {
