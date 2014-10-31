@@ -12,8 +12,8 @@
             "role": "Developer"
         },
         {
--            "name": "Vladimir Droznik",
--            "email": "vladimir.droznik@gmail.com"
+             "name": "Vladimir Droznik",
+             "email": "vladimir.droznik@gmail.com"
          }
     ],
     "minimum-stability": "dev",
